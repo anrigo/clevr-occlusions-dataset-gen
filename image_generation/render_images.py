@@ -379,13 +379,13 @@ def add_random_objects(scene_struct, num_objects, args, camera):
 
         # maximum distance from the previous object, along x and y
         # considering the objects' radii and the minimum allowed distance args.min_dist
-        max_d_objs = 0
-        max_d_centers = max_d_objs + r + rp + args.min_dist
+        max_d_objs_x = 0.1
+        max_d_centers_x = max_d_objs_x + r + rp + args.min_dist
 
         # constrain the new object to be behind or in front of the old one in the x axis
-        ymin, ymax = yp - rp, yp + rp
+        ymin, ymax = yp - rp - rp/2, yp + rp + rp/2
         # define x range so that the x coordinate of the new object will be close to the previous one
-        xmin, xmax = max(-3, xp - max_d_centers), min(xp + max_d_centers, 3)
+        xmin, xmax = max(-3, xp - max_d_centers_x), min(xp + max_d_centers_x, 3)
 
         # sample from the new ranges
         x = random.uniform(xmin, xmax)
