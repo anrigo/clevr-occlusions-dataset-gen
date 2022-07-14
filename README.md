@@ -1,3 +1,8 @@
+The occlusions dataset was rendered with:
+```
+blender --background --python render_images.py -- --num_images 10 --use_gpu 1 --margin 0 --min_objects 10 --max_objects 20 --min_pixels_per_object 0 --min_dist 0 --width 688 --height 516
+```
+
 # CLEVR Dataset Generation
 
 This is the code used to generate the [CLEVR dataset](http://cs.stanford.edu/people/jcjohns/clevr/) as described in the paper:
