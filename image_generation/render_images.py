@@ -338,7 +338,10 @@ def add_random_objects(scene_struct, num_objects, args, camera):
     for name, rgb in properties['colors'].items():
       rgba = [float(c) / 255.0 for c in rgb] + [1.0]
       color_name_to_rgba[name] = rgba
-    material_mapping = [(v, k) for k, v in properties['materials'].items()]
+    
+    # remove metal since we don't want reflections
+    material_mapping = [(v, k) for k, v in properties['materials'].items() if k != 'metal']
+    
     object_mapping = [(v, k) for k, v in properties['shapes'].items()]
     size_mapping = list(properties['sizes'].items())
 
