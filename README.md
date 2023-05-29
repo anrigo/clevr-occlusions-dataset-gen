@@ -1,3 +1,5 @@
+Modified version of the [CLEVR Dataset](https://github.com/facebookresearch/clevr-dataset-gen) to include a high number of occlusions per each image.
+
 The occlusions dataset was rendered with:
 ```
 blender --background --python render_images.py -- --num_images 10 --use_gpu 1 --margin 0 --min_objects 10 --max_objects 20 --min_pixels_per_object 0 --min_dist 0 --width 688 --height 516
